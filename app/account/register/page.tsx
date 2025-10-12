@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 
 export default function Register() {
@@ -7,7 +8,7 @@ export default function Register() {
     email: "",
     password: "",
   });
-  const formChange = (
+  const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
@@ -16,6 +17,7 @@ export default function Register() {
       [name]: value,
     }));
   };
+
   return (
     <>
       <form className="bg-stone-200 text-gray-700 flex p-2">
@@ -30,20 +32,20 @@ export default function Register() {
           <h1 className="text-4xl mb-3">Create Account</h1>
           <div>
             <input
-              type="firstName"
-              name="name"
+              type="text"
+              name="firstName"
               value={register.firstName}
-              onChange={formChange}
+              onChange={handleChange}
               placeholder="First Name"
               className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
             />
           </div>
           <div>
             <input
-              type="LastName"
-              name="name"
+              type="text"
+              name="lastName"
               value={register.lastName}
-              onChange={formChange}
+              onChange={handleChange}
               placeholder="Last Name"
               className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
             />
@@ -53,7 +55,7 @@ export default function Register() {
               type="email"
               name="email"
               value={register.email}
-              onChange={formChange}
+              onChange={handleChange}
               placeholder="Email"
               className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
             />
@@ -64,7 +66,7 @@ export default function Register() {
               name="password"
               id="Password"
               value={register.password}
-              onChange={formChange}
+              onChange={handleChange}
               placeholder="Password"
               className="w-lg h-10 bg-white text-lg rounded-xl pl-4"
             />

@@ -6,17 +6,14 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      {/* Top Announcement Bar */}
       <div className="bg-stone-500 flex items-center justify-center h-10">
         <h1 className="cursor-pointer text-white">
           <a href="#account">Free shipping all over the country up to $1000</a>
         </h1>
       </div>
 
-      {/* Navbar */}
       <nav className="bg-white text-black text-xl shadow-md">
         <div className="p-4 flex justify-between items-center">
-          {/* LEFT SECTION */}
           <div className="flex gap-8 items-center">
             <Link href="/shop" className="hover:text-stone-400 transition">
               Shop
@@ -48,12 +45,10 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* CENTER SECTION */}
           <h1 className="text-2xl font-bold">
             <Link href="/home">Makeup Glow💄</Link>
           </h1>
 
-          {/* RIGHT SECTION */}
           <div className="flex gap-6 items-center">
             <Link
               href="/contact"
