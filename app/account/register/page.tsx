@@ -1,4 +1,21 @@
+import React, { useState } from "react";
+
 export default function Register() {
+  const [register, setRegister] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+  const formChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setRegister((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
   return (
     <>
       <form className="bg-stone-200 text-gray-700 flex p-2">
@@ -15,6 +32,8 @@ export default function Register() {
             <input
               type="firstName"
               name="name"
+              value={register.firstName}
+              onChange={formChange}
               placeholder="First Name"
               className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
             />
@@ -23,6 +42,8 @@ export default function Register() {
             <input
               type="LastName"
               name="name"
+              value={register.lastName}
+              onChange={formChange}
               placeholder="Last Name"
               className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
             />
@@ -31,6 +52,8 @@ export default function Register() {
             <input
               type="email"
               name="email"
+              value={register.email}
+              onChange={formChange}
               placeholder="Email"
               className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
             />
@@ -40,6 +63,8 @@ export default function Register() {
               type="password"
               name="password"
               id="Password"
+              value={register.password}
+              onChange={formChange}
               placeholder="Password"
               className="w-lg h-10 bg-white text-lg rounded-xl pl-4"
             />
