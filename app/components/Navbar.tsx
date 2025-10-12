@@ -50,7 +50,7 @@ export default function Navbar() {
 
           {/* CENTER SECTION */}
           <h1 className="text-2xl font-bold">
-            <Link href="/home">Glam Pop💄</Link>
+            <Link href="/home">Makeup Glow💄</Link>
           </h1>
 
           {/* RIGHT SECTION */}
