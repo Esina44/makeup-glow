@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import { ReactFormState } from "react-dom/client";
+import { json } from "stream/consumers";
 
 export default function Register() {
   const [register, setRegister] = useState({
@@ -18,9 +20,23 @@ export default function Register() {
     }));
   };
 
+  const formSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(register);
+    await fetch("/api/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(register),
+    });
+    setRegister({ firstName: "", lastName: "", email: "", password: "" });
+  };
+
   return (
     <>
-      <form className="bg-stone-200 text-gray-700 flex p-2">
+      <form
+        onSubmit={formSubmit}
+        className="bg-stone-200 text-gray-700 flex p-2"
+      >
         <div className="">
           <img
             src="https://i.pinimg.com/736x/3c/2d/5b/3c2d5bacd062f5c8a4f44f7830538f53.jpg"

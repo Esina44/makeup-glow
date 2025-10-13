@@ -24,7 +24,8 @@ export default function Navbar() {
                 onClick={() => setIsOpen(!isOpen)}
                 className="hover:text-stone-400 transition flex items-center gap-1 cursor-pointer"
               >
-                <a href="#about">About ▾</a>
+                <a href="#about">About </a>
+                <span className="ml-1 inline-block">{isOpen ? "▲" : "▼"}</span>
               </button>
 
               {isOpen && (
