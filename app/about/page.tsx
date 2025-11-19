@@ -13,7 +13,7 @@ export default function About() {
           <h1 className="text-5xl font-bold ">About ESINA'S Makeup</h1>
           <p className="text-2xl max-w-2xl">
             We’re redefining beauty with love, confidence, and creativity where
-            every shade tells a story.
+            every shade tells a story. This is about my story
           </p>
         </div>
       </div>
